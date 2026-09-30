@@ -5,195 +5,243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>清水・駿河湾クルーズ 日帰り旅行の見どころ紹介</title>
   <style>
-    /* --- 基本スタイル --- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-      line-height: 1.7;
-      color: #333333;
-      background-color: #f4f7f9;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+/* --- 基本スタイル --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.7;
+  color: #333333;
+  background-color: #f4f7f9;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* --- ヘッダー・ヒーローセクション --- */
-    .hero {
-      background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
-      color: #ffffff;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .hero-sub {
-      font-size: 0.95rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-    .hero-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .hero-desc {
-      font-size: 1rem;
-      opacity: 0.95;
-    }
+/* --- ヘッダー・ヒーローセクション --- */
+.hero {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(0, 90, 140, 0.30) 0%, rgba(0, 150, 190, 0.20) 100%),
+    url('images/header-cover.jpg') center center / cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 90px 20px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-sub {
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.hero-desc {
+  font-size: 1rem;
+  opacity: 0.98;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
 
-    /* --- コンテナ --- */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+/* --- コンテナ --- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    /* --- セクションタイトル --- */
-    .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #0077b6;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: #00b4d8;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
+/* --- セクションタイトル --- */
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0077b6;
+  margin-bottom: 30px;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00b4d8;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
-    /* --- 旅行のハイライト (カードグリッド) --- */
-    .spots-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-    .spot-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .spot-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-    .spot-tag {
-      background: #0077b6;
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-weight: bold;
-      padding: 4px 12px;
-      align-self: flex-start;
-      margin: 16px 0 0 16px;
-      border-radius: 20px;
-    }
-    .spot-body {
-      padding: 16px 20px 24px;
-      flex-grow: 1;
-    }
-    .spot-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #1a1a1a;
-    }
-    .spot-text {
-      font-size: 0.95rem;
-      color: #555555;
-    }
+/* --- 旅行のハイライト (カードグリッド) --- */
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+.spot-card-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
+  border-radius: 14px;
+}
+.spot-card-link:hover {
+  transform: translateY(-5px);
+}
+.spot-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: box-shadow 0.25s ease;
+}
+.spot-card-link:hover .spot-card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
 
-    /* --- スケジュール (タイムライン) --- */
-    .schedule-box {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      margin-bottom: 40px;
-    }
-    .timeline {
-      position: relative;
-      margin: 20px auto 0;
-      padding-left: 30px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 5px;
-      bottom: 5px;
-      width: 2px;
-      background: #e0e0e0;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 24px;
-    }
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-    .timeline-dot {
-      position: absolute;
-      left: -29px;
-      top: 5px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #00b4d8;
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 0 1px #00b4d8;
-    }
-    .timeline-time {
-      font-weight: 700;
-      color: #0077b6;
-      font-size: 0.95rem;
-      margin-bottom: 2px;
-    }
-    .timeline-content {
-      font-size: 0.95rem;
-    }
+/* --- 画像：全カード共通の固定コンテナ --- */
+.spot-img-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 240px;
+}
+.spot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.spot-card-link:hover .spot-img {
+  transform: scale(1.05);
+}
+.spot-body {
+  padding: 18px 20px 24px;
+  flex-grow: 1;
+  border-top: 1px solid #eef2f5;
+  display: flex;
+  flex-direction: column;
+}
+.spot-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+.spot-text {
+  font-size: 0.95rem;
+  color: #555555;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+.view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0077b6;
+  margin-top: auto;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.spot-card-link:hover .view-more {
+  color: #00b4d8;
+  transform: translateX(4px);
+}
 
-    /* --- 旅行概要・インフォメーション --- */
-    .info-box {
-      background: #e8f4f8;
-      border-left: 4px solid #0077b6;
-      padding: 20px;
-      border-radius: 4px;
-      margin-bottom: 40px;
-    }
-    .info-box h3 {
-      font-size: 1.1rem;
-      color: #0077b6;
-      margin-bottom: 8px;
-    }
-    .info-list {
-      list-style: none;
-      font-size: 0.95rem;
-    }
-    .info-list li {
-      margin-bottom: 6px;
-    }
+/* --- スケジュール (タイムライン) --- */
+.schedule-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+}
+.timeline {
+  position: relative;
+  margin: 20px auto 0;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: #e0e0e0;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -29px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00b4d8;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 1px #00b4d8;
+}
+.timeline-time {
+  font-weight: 700;
+  color: #0077b6;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+.timeline-content {
+  font-size: 0.95rem;
+}
 
-    /* --- フッター --- */
-    footer {
-      text-align: center;
-      padding: 25px 20px;
-      background: #1e293b;
-      color: #94a3b8;
-      font-size: 0.85rem;
-    }
+/* --- 旅行概要・インフォメーション --- */
+.info-box {
+  background: #e8f4f8;
+  border-left: 4px solid #0077b6;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+.info-box h3 {
+  font-size: 1.1rem;
+  color: #0077b6;
+  margin-bottom: 8px;
+}
+.info-list {
+  list-style: none;
+  font-size: 0.95rem;
+}
+.info-list li {
+  margin-bottom: 6px;
+}
+
+/* --- フッター --- */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
   </style>
 </head>
 <body>
@@ -224,48 +272,68 @@
       <div class="spots-grid">
 
         <!-- スポット 1 -->
-        <article class="spot-card">
-          <span class="spot-tag">グルメ & ショッピング</span>
-          <div class="spot-body">
-            <h3 class="spot-title">エスパルスドリームプラザ「はとばキッチン」</h3>
-            <p class="spot-text">
-              清水港のヨットハーバーを目の前に望む複合商業施設。お昼は旬の地元野菜や新鮮食材をたっぷり使った大人気のビュッフェランチ「はとばキッチン」を堪能します。
-            </p>
-          </div>
-        </article>
+        <a href="dreamplaza.html" class="spot-card-link" aria-label="エスパルスドリームプラザの写真と詳細を見る">
+          <article class="spot-card">
+            <div class="spot-img-wrap">
+              <img src="images/dreamplaza2020_01.jpg" alt="エスパルスドリームプラザ" class="spot-img">
+            </div>
+            <div class="spot-body">
+              <h3 class="spot-title">エスパルスドリームプラザ「はとばキッチン」</h3>
+              <p class="spot-text">
+                清水港のヨットハーバーを目の前に望む複合商業施設。お昼は旬の地元野菜や新鮮食材をたっぷり使った大人気のビュッフェランチ「はとばキッチン」を堪能します。
+              </p>
+              <span class="view-more">写真と詳細を見る →</span>
+            </div>
+          </article>
+        </a>
 
         <!-- スポット 2 -->
-        <article class="spot-card">
-          <span class="spot-tag">絶景クルーズ</span>
-          <div class="spot-body">
-            <h3 class="spot-title">駿河湾クルーズ（清水港）</h3>
-            <p class="spot-text">
-              潮風を感じながら約40分間の船旅へ。波穏やかな清水港・駿河湾の船上からは、世界遺産の富士山や美しい海岸線を一望できる特別なパノラマビューが広がります。
-            </p>
-          </div>
-        </article>
+        <a href="cruise.html" class="spot-card-link" aria-label="駿河湾クルーズの写真と詳細を見る">
+          <article class="spot-card">
+            <div class="spot-img-wrap">
+              <img src="images/cruise.jpg" alt="駿河湾クルーズ" class="spot-img">
+            </div>
+            <div class="spot-body">
+              <h3 class="spot-title">駿河湾クルーズ（清水港）</h3>
+              <p class="spot-text">
+                潮風を感じながら約40分間の船旅へ。波穏やかな清水港・駿河湾の船上からは、世界遺産の富士山や美しい海岸線を一望できる特別なパノラマビューが広がります。
+              </p>
+              <span class="view-more">写真と詳細を見る →</span>
+            </div>
+          </article>
+        </a>
 
         <!-- スポット 3 -->
-        <article class="spot-card">
-          <span class="spot-tag">世界文化遺産</span>
-          <div class="spot-body">
-            <h3 class="spot-title">三保の松原（みほのまつばら）</h3>
-            <p class="spot-text">
-              約7kmにわたる青い海と緑の松林、そしてその奥にそびえる富士山が織りなす日本屈指の絶景名所。「羽衣伝説」の舞台としても名高く、爽快な散策を楽しめます。
-            </p>
-          </div>
-        </article>
+        <a href="miho.html" class="spot-card-link" aria-label="三保の松原の写真と詳細を見る">
+          <article class="spot-card">
+            <div class="spot-img-wrap">
+              <img src="images/mihonomatsubara.jpg" alt="三保の松原" class="spot-img">
+            </div>
+            <div class="spot-body">
+              <h3 class="spot-title">三保の松原（みほのまつばら）</h3>
+              <p class="spot-text">
+                約7kmにわたる青い海と緑の松林、そしてその奥にそびえる富士山が織りなす日本屈指の絶景名所。「羽衣伝説」の舞台としても名高く、爽快な散策を楽しめます。
+              </p>
+              <span class="view-more">写真と詳細を見る →</span>
+            </div>
+          </article>
+        </a>
 
         <!-- スポット 4 -->
-        <article class="spot-card">
-          <span class="spot-tag">国宝・パワースポット</span>
-          <div class="spot-body">
-            <h3 class="spot-title">久能山東照宮（くのうざんとうしょうぐう）</h3>
-            <p class="spot-text">
-              天下人・徳川家康公が眠る最初の神社。極彩色の社殿は国宝に指定されています。久能山の麓から駿河湾を背にして参拝する、歴史とパワーあふれる名所です。
-            </p>
-          </div>
-        </article>
+        <a href="kunozan.html" class="spot-card-link" aria-label="久能山東照宮の写真と詳細を見る">
+          <article class="spot-card">
+            <div class="spot-img-wrap">
+              <img src="images/kunozanthoshugu.jpg" alt="久能山東照宮" class="spot-img">
+            </div>
+            <div class="spot-body">
+              <h3 class="spot-title">久能山東照宮（くのうざんとうしょうぐう）</h3>
+              <p class="spot-text">
+                天下人・徳川家康公が眠る最初の神社。極彩色の社殿は国宝に指定されています。久能山の麓から駿河湾を背にして参拝する、歴史とパワーあふれる名所です。
+              </p>
+              <span class="view-more">写真と詳細を見る →</span>
+            </div>
+          </article>
+        </a>
 
       </div>
     </section>

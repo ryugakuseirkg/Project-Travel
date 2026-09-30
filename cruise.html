@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>駿河湾クルーズ - 詳細・ギャラリー</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.8;
+      background-color: #f4f7f9;
+      color: #333333;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      padding: 8px 16px;
+      background: #e8f4f8;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+    .back-btn:hover { background: #d0ebf5; }
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(0, 90, 140, 0.75), rgba(0, 150, 190, 0.65)), url('images/cruise.jpg') center/cover no-repeat;
+      border-radius: 16px;
+      padding: 60px 30px;
+      color: #ffffff;
+      margin-bottom: 35px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .hero-banner h1 { font-size: 2.2rem; margin-bottom: 8px; }
+    .hero-banner p { font-size: 1.05rem; opacity: 0.95; }
+    .detail-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      margin-bottom: 35px;
+    }
+    .detail-card h2 {
+      font-size: 1.4rem;
+      color: #0077b6;
+      border-bottom: 2px solid #eef2f5;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+    .detail-card p { margin-bottom: 16px; font-size: 0.98rem; }
+    .feature-list {
+      list-style: none;
+      margin-top: 15px;
+      padding-left: 0;
+    }
+    .feature-list li {
+      padding: 8px 0;
+      border-bottom: 1px dashed #e5e9ec;
+      font-size: 0.95rem;
+    }
+    .feature-list li strong { color: #0077b6; }
+    .gallery-heading {
+      font-size: 1.5rem;
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .gallery-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      color: #444;
+      background: #fafbfc;
+      border-top: 1px solid #edf1f4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-btn">← トップページ（旅行概要）に戻る</a>
+
+    <header class="hero-banner">
+      <h1>駿河湾クルーズ（清水港）</h1>
+      <p>海の上から仰ぎ見る世界遺産・富士山と心地よい潮風のクルージング[cite: 2]</p>
+    </header>
+
+    <article class="detail-card">
+      <h2>クルーズ詳細 ＆ 乗船ハイライト</h2>
+      <p>
+        清水港・日の出桟橋から出航する約40分間の周遊クルージングです[cite: 2]。日本三大美港の一つに数えられる清水港は三保半島に守られているため波が非常に穏やかで、揺れが少なく船酔いが心配な方でも安心してお楽しみいただけます[cite: 2]。
+      </p>
+      <p>
+        最大の見どころは、遮るもののない海上から望む世界遺産・富士山の圧倒的パノラマビューです[cite: 2]。さらにオープンデッキでは、船の周りを飛び交うカモメたちとの触れ合いも人気を集めています。
+      </p>
+
+      <ul class="feature-list">
+        <li><strong>⏱️ 航行時間：</strong>約40分間の清水港内周遊コース[cite: 2]</li>
+        <li><strong>🚢 船内設備：</strong>エアコン完備の展望客室 ＆ 360度見渡せるオープンデッキ</li>
+        <li><strong>🕊️ 人気体験：</strong>船上売店で販売されるエサでのカモメの餌付け</li>
+      </ul>
+    </article>
+
+    <h2 class="gallery-heading">追加フォトギャラリー（3選）</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="images/cruise_01.jpg" alt="海から望む富士山">
+        <div class="gallery-caption"><strong>1. 海上からの富士山展望</strong><br>青い駿河湾と冠雪の富士山が織りなす大迫力のパノラマ。[cite: 2]</div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/cruise_02.jpg" alt="カモメの群れ">
+        <div class="gallery-caption"><strong>2. デッキで楽しむカモメの餌付け</strong><br>船のすぐそばまで元気に寄ってくる海鳥たち。</div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/cruise_03.jpg" alt="クルーズ船の展望デッキ">
+        <div class="gallery-caption"><strong>3. 爽快なオープンデッキ</strong><br>潮風を感じながら港内の船や造船所を間近で見学。[cite: 2]</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
