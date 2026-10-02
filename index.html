@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>清水・駿河湾クルーズ 日帰り旅行の見どころ紹介</title>
+  <style>
+    /* --- 基本スタイル --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      line-height: 1.7;
+      color: #333333;
+      background-color: #f4f7f9;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- ヘッダー・ヒーローセクション --- */
+   /* --- ヘッダー・ヒーローセクション --- */
+.hero {
+  /* 写真の上に半透明の暗いカバーを重ねて文字をくっきり表示 */
+  background: linear-gradient(rgba(0, 30, 60, 0.45), rgba(0, 15, 30, 0.65)),
+              url('images/hero.jpg') center center / cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px; /* 写真が綺麗に見えるよう少し高さを広げています */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* 文字に影をつけて視認性をアップ */
+}
+    .hero-sub {
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    /* --- コンテナ --- */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* --- セクションタイトル --- */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #0077b6;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #00b4d8;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* --- 旅行のハイライト (カードグリッド) --- */
+    .spots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .spot-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .spot-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    /* 画像をカード上部に均一フィット */
+    .spot-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .spot-tag {
+      background: #0077b6;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      align-self: flex-start;
+      margin: 16px 0 0 16px;
+      border-radius: 20px;
+    }
+    .spot-body {
+      padding: 12px 20px 24px;
+      flex-grow: 1;
+    }
+    .spot-title {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .spot-text {
+      font-size: 0.95rem;
+      color: #555555;
+    }
+
+    /* --- スケジュール (タイムライン) --- */
+    .schedule-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      margin-bottom: 40px;
+    }
+    .timeline {
+      position: relative;
+      margin: 20px auto 0;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background: #e0e0e0;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -29px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #00b4d8;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 1px #00b4d8;
+    }
+    .timeline-time {
+      font-weight: 700;
+      color: #0077b6;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+    .timeline-content {
+      font-size: 0.95rem;
+    }
+
+    /* --- 旅行概要・インフォメーション --- */
+    .info-box {
+      background: #e8f4f8;
+      border-left: 4px solid #0077b6;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 40px;
+    }
+    .info-box h3 {
+      font-size: 1.1rem;
+      color: #0077b6;
+      margin-bottom: 8px;
+    }
+    .info-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+    .info-list li {
+      margin-bottom: 6px;
+    }
+
+    /* --- フッター --- */
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+    /* ලින්ක් එක සාමාන්‍යයෙන් පෙනෙන ආකාරය */
+.spot-title a {
+  text-decoration: none; /* යටින් ඉර අයින් කරයි */
+  color: inherit; /* මව් ටැගයේ පාටම ගනියි */
+  transition: color 0.2s ease; /* පාට වෙනස් වීම මෘදු කරයි */
+}
+
+/* මවුස් එක ලින්ක් එක මතට ගෙනියද්දී (hover) */
+.spot-title a:hover {
+  color: #0077b6; /* නිල් පාට වෙයි */
+  text-decoration: underline; /* යටින් ඉරක් ඇඳෙයි */
+}
+.spot-link-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 16px;
+  background-color: #e07a5f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.spot-link-btn:hover {
+  background-color: #c9654b;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+  </style>
+</head>
+<body>
+
+  <!-- ヒーローセクション -->
+  <header class="hero">
+    <p class="hero-sub">中部コンピュータ・パティシエ専門学校</p>
+    <h1 class="hero-title">清水・駿河湾クルーズ日帰り旅行</h1>
+    <p class="hero-desc">歴史と富士の絶景、海の幸を満喫する静岡・清水の旅</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 基本情報 -->
+    <section class="info-box">
+      <h3>📅 ご旅行概要</h3>
+      <ul class="info-list">
+        <li><strong>日程：</strong>令和8年9月12日（土） 日帰り</li>
+        <li><strong>方面：</strong>静岡県 清水・久能山エリア</li>
+        <li><strong>集合・出発：</strong>学校前 8:45配車 / 9:00出発</li>
+        <li><strong>解散予定：</strong>学校前 19:00着</li>
+      </ul>
+    </section>
+
+    <!-- 見どころハイライト -->
+    <section>
+      <h2 class="section-title">旅のハイライト・見どころ</h2>
+      <div class="spots-grid">
+
+        <!-- スポット 1 -->
+        <article class="spot-card">
+        <img src="images/kitchen.jpg" alt="ドリームプラザの外観">
+        <span class="spot-tag">グルメ & ショッピング</span>
+        <div class="spot-body">
+          <h3 class="spot-title">
+            <!-- Google Map ලින්ක් එක -->
+            <a href="https://www.google.com/maps/search/?api=1&query=エスパルスドリームプラザ+はとばキッチン" target="_blank" rel="noopener noreferrer">
+              エスパルスドリームプラザ「はとばキッチン」 📍
+            </a>
+          </h3>
+          <p class="spot-text">
+            清水港のヨットハーバーを目の前に望む複合商業施設。お昼は旬の地元野菜や新鮮食材をたっぷり使った大人気のビュッフェランチ「はとばキッチン」を堪能します。
+          </p>
+
+          <!-- මෙන්න මේ Link Button එක අලුතින් එකතු කරන්න -->
+          <a href="hatoba-kitchen.html" class="spot-link-btn">
+            🍽️ はとばキッチンの詳細・メニューを見る →
+          </a>
+        </div>
+      </article>
+
+        <!-- スポット 2 -->
+    <article class="spot-card">
+  <img src="images/ship.jpg" alt="駿河湾クルーズ">
+  <span class="spot-tag">体験 & クルーズ</span>
+  <div class="spot-body">
+    <h3 class="spot-title">
+      <!-- Google Map Link -->
+      <a href="https://www.google.com/maps/search/?api=1&query=清水港+日の出桟橋+水上バス乗り場" target="_blank" rel="noopener noreferrer">
+        駿河湾クルーズ（清水港） 📍
+      </a>
+    </h3>
+    <p class="spot-text">
+      日本三大美港の一つである清水港から出航。海の上から富士山と三保の松原を望む贅沢なクルージング体験が楽しめます。
+    </p>
+
+    <!-- මෙන්න මේ අලුත් Button Link එක එක් කරන්න -->
+    <a href="shimizu-cruise.html" class="spot-link-btn">
+      🚢 駿河湾クルーズの詳細・運航情報を見る →
+    </a>
+  </div>
+</article>
+<article class="spot-card">
+  <img src="images/view.jpg" alt="三保の松原">
+  <span class="spot-tag">世界文化遺産 & 絶景</span>
+  <div class="spot-body">
+    <h3 class="spot-title">
+      <!-- Google Map Link -->
+      <a href="https://www.google.com/maps/search/?api=1&query=三保の松原" target="_blank" rel="noopener noreferrer">
+        三保の松原（みほのまつばら） 📍
+      </a>
+    </h3>
+    <p class="spot-text">
+      富士山世界文化遺産の構成資産。約7kmの海岸線に約3万本の松が生い茂り、松林越しに望む富士山と打ち寄せる白波の景色は圧巻です。
+    </p>
+
+    <!-- මෙන්න මේ අලුත් Link Button එක එක් කරන්න -->
+    <a href="miho-no-matsubara.html" class="spot-link-btn">
+      🌲 三保の松原の詳細・羽衣伝説を見る →
+    </a>
+  </div>
+</article>
+
+        <!-- スポット 3 -->
+       <!-- スポット 3 -->
+
+        <!-- スポット 4 -->
+    <article class="spot-card">
+  <img src="images/temple.jpg" alt="久能山東照宮">
+  <span class="spot-tag">国宝 & パワースポット</span>
+  <div class="spot-body">
+    <h3 class="spot-title">
+      <!-- Google Map Link -->
+      <a href="https://www.google.com/maps/search/?api=1&query=久能山東照宮" target="_blank" rel="noopener noreferrer">
+        久能山東照宮（くのうざんとうしょうぐう） 📍
+      </a>
+    </h3>
+    <p class="spot-text">
+      徳川家康公をご祭神とする最初の東照宮。国宝に指定された本殿をはじめ、極彩色の美しい社殿が立ち並び、日本平からのロープウェイ空中散歩も魅力です。
+    </p>
+
+    <!-- මෙන්න මේ අලුත් Link Button එක එක් කරන්න -->
+    <a href="kunozan-toshogu.html" class="spot-link-btn">
+      ⛩️ 久能山東照宮の詳細・参拝案内を見る →
+    </a>
+  </div>
+</article>
+
+      </div>
+    </section>
+
+    <!-- 当日のタイムスケジュール -->
+    <section class="schedule-box">
+      <h2 class="section-title">当日のタイムスケジュール</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">08:45 / 09:00</div>
+          <div class="timeline-content">学校前 配車・出発 🚌（豊川ICより高速道路へ）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">11:20 - 12:40</div>
+          <div class="timeline-content">
+            <strong>清水エスパルスドリームプラザ</strong><br>
+            「はとばキッチン」にて美味しいビュッフェランチ（11:40〜）🍽️
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">13:00 - 13:40</div>
+          <div class="timeline-content">
+            <strong>駿河湾クルーズ</strong> 🚢<br>
+            清水港を出航！爽やかな潮風と海の絶景を満喫。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">14:10 - 14:45</div>
+          <div class="timeline-content">
+            <strong>三保の松原 散策</strong> 🌲<br>
+            白砂青松と富士山のビューポイントを散策。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">15:00 - 16:20</div>
+          <div class="timeline-content">
+            <strong>久能山東照宮 参拝</strong> ⛩️<br>
+            徳川家康ゆかりの国宝社殿を見学。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">16:40</div>
+          <div class="timeline-content">久能山ICより帰路へ（途中サービスエリアで休憩）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">19:00</div>
+          <div class="timeline-content">学校前 到着・解散 🎉</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>※バス走行中は安全のため必ずシートベルトの着用をお願いいたします。</p>
+    <p style="margin-top: 4px;">企画手配：株式会社 第一観光</p>
+  </footer>
+
+</body>
+</html>

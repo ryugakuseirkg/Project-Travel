@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>駿河湾クルーズ（清水港） | 富士山を望む海の旅</title>
+  <style>
+    :root {
+      --primary: #1d70b8;
+      --secondary: #1d3557;
+      --accent: #e63946;
+      --bg: #f4f8fb;
+      --card-bg: #ffffff;
+      --text: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                  url('https://www.shimizu-cruise.co.jp/assets/img/baycruise/recommended_points_01_photo_mobile.jpg') center/cover no-repeat;
+      color: #ffffff;
+      text-align: center;
+      padding: 95px 20px 75px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 8px 18px;
+      border: 1px solid #ccd9e8;
+      border-radius: 6px;
+      background: #fff;
+      margin-bottom: 30px;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--secondary);
+      color: #fff;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
+      margin: 45px 0 22px;
+      padding-bottom: 5px;
+    }
+
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+
+    .photo-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card .desc {
+      padding: 16px;
+    }
+
+    .photo-card h3 {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .photo-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Highlights / Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: 10px;
+      border-top: 4px solid var(--primary);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e1f0fa;
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .feature-item h3 {
+      font-size: 1.15rem;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    /* Info Table */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    .info-table th, .info-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid #edf2f7;
+      font-size: 0.95rem;
+    }
+
+    .info-table th {
+      background: #eaf2f8;
+      color: var(--secondary);
+      width: 28%;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #fff;
+      border-top: 1px solid #e1e8ed;
+      color: #888;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <h1>駿河湾クルーズ（清水港）</h1>
+    <p>富士山と三保の松原を望む、日本三大美港・清水港の爽快クルージング</p>
+  </header>
+
+  <div class="container">
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">← メインページに戻る</a>
+
+    <!-- Photo Gallery -->
+    <h2 class="section-title">クルーズの見どころ・写真</h2>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="https://www.shimizu-cruise.co.jp/assets/img/baycruise/recommended_points_01_photo_mobile.jpg" alt="クルーズ船と富士山">
+        <div class="desc">
+          <h3>海上からの富士山の絶景</h3>
+          <p>波穏やかな清水港から、三保の松原越しにそびえる雄大な富士山を一望できます。</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="https://www.visit-shizuoka.com/lsc/upfile/article/0000/0040/40_1_l.jpg" alt="駿河湾フェリー・船上の様子">
+        <div class="desc">
+          <h3>爽快なオープンデッキ</h3>
+          <p>海風を感じながらカモメとのふれあいや、開放感あふれる360度パノラマを楽しめます。</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="清水港ヨットハーバー">
+        <div class="desc">
+          <h3>清水港の港湾風景</h3>
+          <p>大型客船バースや造船所、ヨットハーバーなど、日本を代表する美しい国際貿易港の景色が広がります。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <h2 class="section-title">クルーズのポイント</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="badge">景観</span>
+        <h3>富士山＆三保松原</h3>
+        <p>世界遺産の富士山と三保松原を海の上という特等席から眺める贅沢な時間。</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="badge">体験</span>
+        <h3>カモメの餌付け</h3>
+        <p>秋から冬にかけて船の周りに集まるユリカモメへの餌付け体験が大人気です。</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="badge">アクセス</span>
+        <h3>ドリプラ直結</h3>
+        <p>エスパルスドリームプラザすぐ横の日の出桟橋から手軽に乗船可能です。</p>
+      </div>
+
+      <div class="feature-item">
+        <span class="badge">快適性</span>
+        <h3>冷暖房完備の船内</h3>
+        <p>エアコン付きの快適な客室と、開放的な屋上デッキの両方を楽しめます。</p>
+      </div>
+    </div>
+
+    <!-- Tour Info -->
+    <h2 class="section-title">運航案内・乗船情報</h2>
+    <table class="info-table">
+      <tr>
+        <th>のりば（発着場所）</th>
+        <td>清水港 日の出桟橋（エスパルスドリームプラザ海側ウッドデッキすぐ）</td>
+      </tr>
+      <tr>
+        <th>運航コース・所要時間</th>
+        <td>
+          <strong>清水港湾内クルーズ：</strong> 約35分～45分周遊コース<br>
+          ※季節により夕景を楽しむ「サンセットクルーズ」なども運航。
+        </td>
+      </tr>
+      <tr>
+        <th>乗船料金（目安）</th>
+        <td>
+          <strong>大人（中学生以上）：</strong> 約1,500円～1,600円<br>
+          <strong>小人（小学生）：</strong> 約750円～800円（未就学児は大人1名につき1名無料）
+        </td>
+      </tr>
+      <tr>
+        <th>出航時間</th>
+        <td>11:30発 / 13:00発 / 14:00発 / 15:00発 など（1日複数便運航・天候により変更あり）</td>
+      </tr>
+      <tr>
+        <th>お問い合わせ</th>
+        <td>富士山清水港クルーズ（電話: 054-353-2222）</td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 駿河湾クルーズ（清水港） ご案内ページ</p>
+  </footer>
+
+</body>
+</html>
